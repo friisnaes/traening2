@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dagens træning · Karakter · Disciplin · Klarhed</title>
+<meta name="description" content="Dagens træning — Navy Seal og Senior versioner. Helkrop. 38 minutter. Karakter · Disciplin · Klarhed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0E0D0C;--bg2:#16140F;--bg3:#1E1B16;--bg4:#262218;
+  --line:#3A3530;--line2:#4A4338;
+  --tx:#F0ECE6;--tb:#D8D2C8;--tm:#9E978C;--td:#6E6860;
+  --ac:#D4B275;--ac2:#E5C58A;--acd:#A08040;
+  --warm:#7CA89E;--warmb:rgba(124,168,158,.1);
+  --crush:#C8924A;--crushb:rgba(200,146,74,.1);
+  --gold:#D4B275;--goldb:rgba(212,178,117,.1);
+  --burn:#C87060;--burnb:rgba(200,112,96,.1);
+  --grn:#7CAA85;
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --fb:'DM Sans',sans-serif;
+  --r:4px;--rl:10px;
+  --s1:0 1px 4px rgba(0,0,0,.4);
+  --s2:0 8px 32px rgba(0,0,0,.5);
+  --s3:0 24px 60px rgba(0,0,0,.6);
+}
+html{scroll-behavior:smooth;font-size:17px;scroll-padding-top:64px}
+body{font-family:var(--fb);background:var(--bg);color:var(--tb);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at top,rgba(212,178,117,.04),transparent 60%);pointer-events:none;z-index:0}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.15;color:var(--tx)}
+em{font-style:italic;color:var(--ac);font-weight:500}
+.ctr{max-width:880px;margin:0 auto;padding:0 clamp(1.4rem,4vw,2.5rem);width:100%}
+
+/* HEADER */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,13,12,.78);backdrop-filter:blur(20px) saturate(1.1);border-bottom:1px solid var(--line)}
+.hdr-inner{max-width:880px;margin:0 auto;padding:.75rem clamp(1.4rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-family:var(--fd);font-weight:700;font-size:1.2rem;letter-spacing:.06em;color:var(--tx);white-space:nowrap}
+.brand span{color:var(--ac);margin:0 .15rem}
+.brand small{font-family:var(--fb);font-weight:600;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--tm);display:block;line-height:1;margin-top:.15rem}
+.tabs{display:flex;background:var(--bg3);border:1px solid var(--line);border-radius:var(--r);padding:3px;gap:0}
+.tab{padding:.45rem .9rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--tm);background:none;border:none;cursor:pointer;border-radius:3px;transition:all .25s;font-family:var(--fb);white-space:nowrap}
+.tab:hover{color:var(--tx)}
+.tab.active{background:var(--ac);color:var(--bg);box-shadow:0 1px 4px rgba(0,0,0,.3)}
+@media(max-width:480px){.tab{padding:.4rem .65rem;font-size:.65rem}.brand{font-size:1.05rem}.brand small{font-size:.55rem}}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:5rem 0 3rem;text-align:center;position:relative}
+.kicker{font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ac);font-weight:700;margin-bottom:1.2rem}
+.hero h1{font-size:clamp(2.6rem,7vw,4.8rem);margin-bottom:1rem;letter-spacing:-.01em}
+.lede{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--tm);max-width:520px;margin:0 auto 2.5rem;line-height:1.6}
+.hero-stats{display:flex;gap:clamp(1.5rem,5vw,3.5rem);justify-content:center;margin-bottom:2.5rem;flex-wrap:wrap}
+.stat-num{font-family:var(--fd);font-size:clamp(2rem,5vw,2.8rem);color:var(--ac);font-weight:600;line-height:1}
+.stat-lbl{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tm);font-weight:600;margin-top:.4rem}
+.scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--td);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0);opacity:.6}50%{transform:translate(-50%,8px);opacity:1}}
+
+/* VARIANT */
+.variant{display:none}
+.variant.active{display:block}
+.variant-hero{min-height:100svh;display:flex;align-items:center;border-top:1px solid var(--line);position:relative;padding:5rem 0}
+.variant-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,178,117,.05),transparent 70%);pointer-events:none}
+.v-tag{display:inline-block;padding:.3rem .8rem;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;border-radius:var(--r);margin-bottom:1.4rem;border:1.5px solid;font-family:var(--fb)}
+.v-tag.navy{color:var(--ac);border-color:var(--ac);background:var(--goldb)}
+.v-tag.senior{color:var(--warm);border-color:var(--warm);background:var(--warmb)}
+.vh-title{font-size:clamp(2.4rem,6.5vw,4.4rem);margin-bottom:1rem;letter-spacing:-.01em}
+.vh-sub{font-size:clamp(1rem,1.8vw,1.15rem);color:var(--tm);max-width:540px;margin-bottom:1.8rem;line-height:1.6}
+.vh-warn{padding:.85rem 1.1rem;background:var(--bg3);border:1px solid var(--line);border-left:3px solid var(--ac);border-radius:var(--r);font-size:.92rem;color:var(--tb);max-width:540px;margin-bottom:2rem;line-height:1.55}
+.variant.senior .vh-warn{border-left-color:var(--warm)}
+.vh-meta{display:flex;gap:2rem;padding-top:1.5rem;border-top:1px solid var(--line);flex-wrap:wrap}
+.vh-meta .stat-num{font-size:1.7rem}
+.vh-meta .stat-lbl{font-size:.66rem}
+
+/* DEL — full viewport workout section */
+.del{min-height:100svh;display:flex;align-items:center;padding:4rem 0;border-top:1px solid var(--line);position:relative}
+.del::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px}
+.del.warm::before{background:var(--warm)}
+.del.crush::before{background:var(--crush)}
+.del.stairs::before{background:var(--gold)}
+.del.amrap::before{background:var(--burn)}
+.del-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;margin-bottom:1.8rem;flex-wrap:wrap}
+.del-num{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;margin-bottom:.4rem}
+.del.warm .del-num{color:var(--warm)}
+.del.crush .del-num{color:var(--crush)}
+.del.stairs .del-num{color:var(--gold)}
+.del.amrap .del-num{color:var(--burn)}
+.del-title{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-.01em}
+.del-meta{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:.8rem;font-size:.92rem;color:var(--tm)}
+.del-meta span{display:inline-flex;align-items:center;gap:.35rem}
+.del-time{font-family:var(--fd);font-size:clamp(2.4rem,6vw,3.8rem);font-weight:600;line-height:1;white-space:nowrap;letter-spacing:-.02em}
+.del.warm .del-time{color:var(--warm)}
+.del.crush .del-time{color:var(--crush)}
+.del.stairs .del-time{color:var(--gold)}
+.del.amrap .del-time{color:var(--burn)}
+
+.format-bar{padding:.85rem 1.1rem;background:var(--bg3);border:1px solid var(--line);border-left:3px solid var(--ac);border-radius:var(--r);margin-bottom:1.5rem;font-size:.92rem;color:var(--tb);line-height:1.55}
+.format-bar strong{color:var(--ac);font-weight:700}
+.del.warm .format-bar{border-left-color:var(--warm)}.del.warm .format-bar strong{color:var(--warm)}
+.del.crush .format-bar{border-left-color:var(--crush)}.del.crush .format-bar strong{color:var(--crush)}
+.del.stairs .format-bar{border-left-color:var(--gold)}.del.stairs .format-bar strong{color:var(--gold)}
+.del.amrap .format-bar{border-left-color:var(--burn)}.del.amrap .format-bar strong{color:var(--burn)}
+
+.del-foot{margin-top:1rem;padding:.7rem 1rem;background:var(--bg2);border-radius:var(--r);font-size:.88rem;color:var(--tm);font-style:italic;font-family:var(--fd)}
+
+/* DEL 1 — Exercise grid */
+.ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.55rem}
+.ex-tile{padding:.85rem 1rem;background:var(--bg3);border:1px solid var(--line);border-radius:var(--r);display:flex;align-items:center;gap:.85rem;transition:all .25s}
+.ex-tile:hover{border-color:var(--ac);transform:translateY(-1px)}
+.del.warm .ex-tile:hover{border-color:var(--warm)}
+.ex-num{font-family:var(--fd);font-size:1.5rem;color:var(--ac);font-weight:600;min-width:22px;line-height:1}
+.del.warm .ex-num{color:var(--warm)}
+.ex-name{font-size:.94rem;color:var(--tx);font-weight:500;line-height:1.3}
+.ex-sub{font-size:.78rem;color:var(--tm);margin-top:.15rem;line-height:1.4}
+
+/* DEL 2 — Exercise list */
+.ex-list{display:flex;flex-direction:column;gap:.5rem}
+.ex-row{padding:.85rem 1.1rem;background:var(--bg3);border:1px solid var(--line);border-radius:var(--r);display:flex;align-items:center;gap:1rem;transition:all .25s}
+.ex-row:hover{border-color:var(--crush)}
+.ex-row.feature{background:linear-gradient(90deg,rgba(200,146,74,.12),var(--bg3));border-left:3px solid var(--crush);border-color:var(--crush)}
+.ex-row .ex-num{color:var(--crush);font-size:1.5rem}
+.ex-row.feature .ex-num{font-size:1.85rem}
+.ex-row.feature .ex-name{font-weight:700;font-size:1.1rem}
+.ex-content{flex:1}
+.variant.senior .ex-row:hover{border-color:var(--warm)}
+.variant.senior .ex-row .ex-num{color:var(--warm)}
+.variant.senior .ex-row.feature{background:linear-gradient(90deg,rgba(124,168,158,.12),var(--bg3));border-color:var(--warm)}
+
+/* DEL 3 — EMOM list */
+.emom-list{display:flex;flex-direction:column;gap:.4rem}
+.emom-row{padding:.7rem 1rem;background:var(--bg3);border:1px solid var(--line);border-radius:var(--r);display:flex;align-items:center;gap:1rem;transition:all .25s}
+.emom-row.sprint{border-left:3px solid var(--gold);background:linear-gradient(90deg,rgba(212,178,117,.07),var(--bg3))}
+.emom-row.work{border-left:3px solid var(--line2)}
+.emom-row.work:hover{border-color:var(--gold)}
+.emom-min{font-family:var(--fd);font-size:.95rem;letter-spacing:.04em;color:var(--tm);font-weight:600;min-width:62px}
+.emom-row.sprint .emom-min{color:var(--gold);font-weight:700}
+.emom-name{font-size:.96rem;color:var(--tx);font-weight:500;flex:1;line-height:1.4}
+.emom-row.sprint .emom-name{font-weight:600}
+
+/* DEL 4 — AMRAP ladder */
+.amrap-ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem}
+.amrap-step{padding:1.1rem .6rem;background:var(--bg3);border:1px solid var(--line);border-radius:var(--r);text-align:center;position:relative;transition:all .25s}
+.amrap-step:hover{transform:translateY(-2px);box-shadow:var(--s1)}
+.amrap-step::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.amrap-step:nth-child(1)::before{background:linear-gradient(90deg,var(--td),var(--burn))}
+.amrap-step:nth-child(2)::before{background:linear-gradient(90deg,var(--burn),var(--crush))}
+.amrap-step:nth-child(3)::before{background:linear-gradient(90deg,var(--crush),var(--gold))}
+.amrap-step:nth-child(4)::before{background:linear-gradient(90deg,var(--gold),var(--ac2))}
+.amrap-step:nth-child(5)::before{background:linear-gradient(90deg,var(--ac2),#FFD699)}
+.amrap-reps{font-family:var(--fd);font-size:clamp(2rem,5vw,2.6rem);color:var(--burn);font-weight:600;line-height:1;letter-spacing:-.02em}
+.amrap-name{font-size:.78rem;color:var(--tx);margin-top:.45rem;line-height:1.25;font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+.variant.senior .amrap-reps{color:var(--warm)}
+.variant.senior .amrap-step:nth-child(1)::before{background:linear-gradient(90deg,var(--td),var(--warm))}
+.variant.senior .amrap-step:nth-child(2)::before{background:linear-gradient(90deg,var(--warm),#9DC4BA)}
+.variant.senior .amrap-step:nth-child(3)::before{background:linear-gradient(90deg,#9DC4BA,var(--gold))}
+.variant.senior .amrap-step:nth-child(4)::before{background:linear-gradient(90deg,var(--gold),var(--ac2))}
+.variant.senior .amrap-step:nth-child(5)::before{background:linear-gradient(90deg,var(--ac2),#FFD699)}
+@media(max-width:560px){.amrap-ladder{grid-template-columns:repeat(2,1fr)}.amrap-step:nth-child(5){grid-column:span 2}}
+
+/* BREATHER — separator section */
+.breather{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 1.4rem;border-top:1px solid var(--line);position:relative;background:var(--bg2)}
+.breather::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,178,117,.04),transparent 60%);pointer-events:none}
+.breath-art{margin-bottom:2.5rem;opacity:.7}
+.breath-art svg{width:clamp(180px,30vw,260px);height:auto}
+.quote{font-family:var(--fd);font-style:italic;font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:500;line-height:1.35;color:var(--tx);max-width:680px;margin:0 auto 1.5rem;letter-spacing:-.005em}
+.quote em{font-style:italic;color:var(--ac);font-weight:600}
+.quote-attr{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tm);font-weight:600;margin-top:1.5rem}
+.quote-attr strong{color:var(--ac);font-weight:700}
+.variant.senior .quote-attr strong{color:var(--warm)}
+.variant.senior .quote em{color:var(--warm)}
+
+/* OUTRO */
+.outro{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 1.4rem;border-top:1px solid var(--line);background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
+.outro-mark{font-family:var(--fd);font-size:clamp(4rem,12vw,8rem);color:var(--ac);line-height:1;margin-bottom:1.5rem;font-weight:300}
+.variant.senior .outro-mark{color:var(--warm)}
+.outro h2{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:1.2rem;line-height:1.1}
+.outro p{color:var(--tm);max-width:480px;font-size:1.02rem}
+.outro-actions{margin-top:2rem;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.4rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;border-radius:var(--r);cursor:pointer;transition:all .25s;font-family:var(--fb);border:none}
+.btn.primary{background:var(--ac);color:var(--bg);box-shadow:0 2px 12px rgba(212,178,117,.25)}
+.btn.primary:hover{background:var(--ac2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--tm);border:1.5px solid var(--line2)}
+.btn.ghost:hover{color:var(--tx);border-color:var(--ac)}
+
+/* DIVIDER between NAVY SEAL and SENIOR */
+.divider{padding:6rem 1.4rem;text-align:center;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.divider-line{width:60px;height:1px;background:var(--line2);margin:0 auto 2rem}
+.divider-kicker{font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--tm);font-weight:700;margin-bottom:1rem}
+.divider h3{font-size:clamp(1.6rem,4vw,2.4rem);font-style:italic;color:var(--tx);font-weight:500;margin-bottom:.8rem;line-height:1.3}
+.divider p{color:var(--tm);max-width:440px;margin:0 auto;font-size:.95rem}
+
+/* FOOTER */
+footer{padding:3rem 1.4rem 4rem;text-align:center;background:var(--bg2);border-top:1px solid var(--line)}
+footer .brand{margin-bottom:.6rem;justify-content:center;display:inline-block}
+footer p{font-size:.82rem;color:var(--td);line-height:1.7}
+footer .credo{font-family:var(--fd);font-style:italic;color:var(--tm);font-size:1rem;margin-top:.4rem}
+
+/* Fade-in */
+.fade{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.fade.in{opacity:1;transform:translateY(0)}
+
+/* PRINT */
+@media print{
+  body{background:#fff;color:#111;font-size:10pt}
+  .hdr,.scroll-cue,.btn,.outro-actions,.tabs{display:none!important}
+  .hero,.variant-hero,.del,.breather,.outro,.divider{min-height:auto;padding:.6rem 0;break-inside:avoid;border-color:#ccc;background:#fff}
+  .ex-tile,.ex-row,.emom-row,.amrap-step,.format-bar,.vh-warn{background:#fff;border-color:#ccc;box-shadow:none}
+  .variant{display:block!important}
+  .variant.senior{break-before:page}
+  h1,h2,h3,h4,.ex-num,.del-time,.amrap-reps,.stat-num,em,.outro-mark{color:#111!important}
+  .quote em{color:#000!important}
+  .breath-art{display:none}
+}
+
+@media(max-width:520px){
+  .del-head{flex-direction:column;align-items:flex-start;gap:.4rem}
+  .del-time{font-size:2.4rem}
+  .vh-meta{gap:1.4rem}
+  .ex-list .ex-row{padding:.7rem .9rem}
+  .emom-min{min-width:54px;font-size:.88rem}
+  .emom-name{font-size:.9rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-inner">
+    <div class="brand">DAGENS<span>·</span>TRÆNING</div>
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-v="navy">Navy Seal</button>
+      <button class="tab" data-v="senior">Senior</button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="ctr">
+    <div class="kicker fade">Dagens træning</div>
+    <h1 class="fade">Karakter.<br><em>Disciplin.</em> Klarhed.</h1>
+    <p class="lede fade">Helkrop. 38 minutter. Fire dele. To intensitetsniveauer.<br>Vælg din vej. Mød op.</p>
+    <div class="hero-stats fade">
+      <div><div class="stat-num">38</div><div class="stat-lbl">Minutter</div></div>
+      <div><div class="stat-num">4</div><div class="stat-lbl">Dele</div></div>
+      <div><div class="stat-num">2</div><div class="stat-lbl">Versioner</div></div>
+    </div>
+    <div class="fade">
+      <span class="kicker" style="font-size:.7rem;color:var(--tm);margin-right:.5rem">Vælg version i toppen, eller</span>
+    </div>
+  </div>
+  <div class="scroll-cue">Rul ned ↓</div>
+</section>
+
+<main>
+
+<!-- ═══════════════════════════════════════ NAVY SEAL ═══════════════════════════════════════ -->
+<div class="variant active" id="navy">
+
+  <section class="variant-hero">
+    <div class="ctr">
+      <div class="v-tag navy fade">Version · Navy Seal</div>
+      <h2 class="vh-title fade">Ingen <em>kompromis.</em></h2>
+      <p class="vh-sub fade">Fuld intensitet. Fire dele uden ophold. For kroppen der er klar — og vil knuse maskinen.</p>
+      <div class="vh-warn fade"><strong style="color:var(--ac)">⚠ Forudsætning:</strong> Du skal være varm, kropsfit, og have direkte adgang til en trappe (helst &gt;15 trin). 16 kg kettlebell + 2× 10 kg håndvægte + elastik.</div>
+      <div class="vh-meta fade">
+        <div><div class="stat-num">38</div><div class="stat-lbl">Min total</div></div>
+        <div><div class="stat-num">4</div><div class="stat-lbl">Dele</div></div>
+        <div><div class="stat-num">~25+</div><div class="stat-lbl">Øvelser</div></div>
+        <div><div class="stat-num" style="color:var(--burn)">Hård</div><div class="stat-lbl">Intensitet</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEL 1 — OPVARMNING -->
+  <section class="del warm" id="n-del1">
+    <div class="ctr">
+      <div class="del-head fade">
+        <div>
+          <div class="del-num">Del 1 · Opvarmning</div>
+          <h2 class="del-title">Tænd <em>motoren.</em></h2>
+          <div class="del-meta">
+            <span>🔁 2 runder</span>
+            <span>⏱ 30 sek pr. øvelse</span>
+            <span>·  Ingen pauser</span>
+          </div>
+        </div>
+        <div class="del-time">8 min</div>
+      </div>
+      <div class="format-bar fade"><strong>Format:</strong> 8 øvelser × 30 sek × 2 runder. Flow direkte fra én til næste — ingen pauser mellem øvelserne.</div>
+      <div class="ex-grid fade">
+        <div class="ex-tile"><div class="ex-num">1</div><div><div class="ex-name">Air squats</div></div></div>
+        <div class="ex-tile"><div class="ex-num">2</div><div><div class="ex-name">Band pull-aparts</div></div></div>
+        <div class="ex-tile"><div class="ex-num">3</div><div><div class="ex-name">Mountain climbers</div></div></div>
+        <div class="ex-tile"><div class="ex-num">4</div><div><div class="ex-name">Walking lunges</div></div></div>
+        <div class="ex-tile"><div class="ex-num">5</div><div><div class="ex-name">Pushups</div></div></div>
+        <div class="ex-tile"><div class="ex-num">6</div><div><div class="ex-name">Lette kettlebell swings</div></div></div>
+        <div class="ex-tile"><div class="ex-num">7</div><div><div class="ex-name">Arm circles · skuldermobilitet</div></div></div>
+        <div class="ex-tile"><div class="ex-num">8</div><div><div class="ex-name">Trappeløb · roligt tempo</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREATHER 1 -->
+  <section class="breather">
+    <div>
+      <div class="breath-art fade">
+        <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 Q40,15 80,40 T160,40 T240,40" stroke="rgba(212,178,117,.55)" stroke-width="1.5" fill="none"/>
+          <path d="M0,52 Q40,27 80,52 T160,52 T240,52" stroke="rgba(212,178,117,.3)" stroke-width="1" fill="none"/>
+          <path d="M0,28 Q40,3 80,28 T160,28 T240,28" stroke="rgba(212,178,117,.3)" stroke-width="1" fill="none"/>
+        </svg>
+      </div>
+      <blockquote class="quote fade">Du har tændt <em>motoren.</em><br>Den brænder kun, hvis du lader den.</blockquote>
+      <div class="quote-attr fade">Træk vejret. Næste del: <strong>Knusemaskinen</strong> ↓</div>
+    </div>
+  </section>
+
+  <!-- DEL 2 — KNUSEMASKINEN -->
+  <section class="del crush" id="n-del2">
+    <div class="ctr">
+      <div class="del-head fade">
+        <div>
+          <div class="del-num">Del 2 · Knusemaskinen</div>
+          <h2 class="del-title">Hovedretten.</h2>
+          <div class="del-meta">
+            <span>🔁 3 runder</span>
+            <span>⏸ 45 sek pause mellem runder</span>
+          </div>
+        </div>
+        <div class="del-time">15 min</div>
+      </div>
+      <div class="format-bar fade"><strong>Format:</strong> 400m → 6 indendørs øvelser → pause. Gentag × 3.</div>
+      <div class="ex-list fade">
+        <div class="ex-row feature">
+          <div class="ex-num">1</div>
+          <div class="ex-content">
+            <div class="ex-name">400 m løb</div>
+            <div class="ex-sub">Direkte videre til ↓</div>
+          </div>
+        </div>
+        <div class="ex-row"><div class="ex-num">2</div><div class="ex-content"><div class="ex-name">16 kettlebell thrusters</div><div class="ex-sub">16 kg</div></div></div>
+        <div class="ex-row"><div class="ex-num">3</div><div class="ex-content"><div class="ex-name">12 pushups</div></div></div>
+        <div class="ex-row"><div class="ex-num">4</div><div class="ex-content"><div class="ex-name">10 goblet squats</div><div class="ex-sub">16 kg</div></div></div>
+        <div class="ex-row"><div class="ex-num">5</div><div class="ex-content"><div class="ex-name">8 pullups</div><div class="ex-sub">Skalér med elastik om nødvendigt</div></div></div>
+        <div class="ex-row"><div class="ex-num">6</div><div class="ex-content"><div class="ex-name">20 walking lunges</div><div class="ex-sub">Kropsvægt eller 2×5 kg</div></div></div>
+        <div class="ex-row"><div class="ex-num">7</div><div class="ex-content"><div class="ex-name">30 sek planke</div></div></div>
+      </div>
+      <div class="del-foot fade">→ 45 sek pause. Næste runde.</div>
+    </div>
+  </section>
+
+  <!-- BREATHER 2 -->
+  <section class="breather">
+    <div>
+      <div class="breath-art fade">
+        <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="0,90 40,55 75,68 110,30 145,48 180,22 240,40" stroke="rgba(212,178,117,.55)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="180" cy="22" r="3.5" fill="rgba(212,178,117,.85)"/>
+          <line x1="180" y1="22" x2="180" y2="8" stroke="rgba(212,178,117,.4)" stroke-width="1" stroke-dasharray="2,2"/>
+        </svg>
+      </div>
+      <blockquote class="quote fade">Halvvejs er ikke et sted.<br>Det er <em>en beslutning.</em></blockquote>
+      <div class="quote-attr fade">Næste del: <strong>Trappeleg</strong> ↓</div>
+    </div>
+  </section>
+
+  <!-- DEL 3 — TRAPPELEG -->
+  <section class="del stairs" id="n-del3">
+    <div class="ctr">
+      <div class="del-head fade">
+        <div>
+          <div class="del-num">Del 3 · Trappeleg</div>
+          <h2 class="del-title">EMOM <em>10.</em></h2>
+          <div class="del-meta">
+            <span>⚡ Every Minute On the Minute</span>
+            <span>· 10 minutter, 10 opgaver</span>
+          </div>
+        </div>
+        <div class="del-time">10 min</div>
+      </div>
+      <div class="format-bar fade"><strong>EMOM 10:</strong> Hver hele minut starter du forfra med opgaven. Resten af minuttet er pause.</div>
+      <div class="emom-list fade">
+        <div class="emom-row sprint"><div class="emom-min">Min 1</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 2</div><div class="emom-name">10 håndvægt thrusters · 2× 10 kg</div></div>
+        <div class="emom-row sprint"><div class="emom-min">Min 3</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 4</div><div class="emom-name">12 renegade rows · 2× 10 kg · planke/løft</div></div>
+        <div class="emom-row sprint"><div class="emom-min">Min 5</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 6</div><div class="emom-name">14 KB deadlifts · 16 kg</div></div>
+        <div class="emom-row sprint"><div class="emom-min">Min 7</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 8</div><div class="emom-name">Max pushups · 40 sek</div></div>
+        <div class="emom-row sprint"><div class="emom-min">Min 9</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 10</div><div class="emom-name">Max air squats · 40 sek</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREATHER 3 -->
+  <section class="breather">
+    <div>
+      <div class="breath-art fade">
+        <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="78" r="22" stroke="rgba(212,178,117,.55)" stroke-width="1.5" fill="none"/>
+          <line x1="100" y1="20" x2="100" y2="44" stroke="rgba(212,178,117,.55)" stroke-width="1.5"/>
+          <line x1="50" y1="78" x2="68" y2="78" stroke="rgba(212,178,117,.4)" stroke-width="1.5"/>
+          <line x1="132" y1="78" x2="150" y2="78" stroke="rgba(212,178,117,.4)" stroke-width="1.5"/>
+          <line x1="64" y1="42" x2="76" y2="54" stroke="rgba(212,178,117,.4)" stroke-width="1.5"/>
+          <line x1="124" y1="54" x2="136" y2="42" stroke="rgba(212,178,117,.4)" stroke-width="1.5"/>
+          <circle cx="100" cy="78" r="3" fill="rgba(212,178,117,.85)"/>
+        </svg>
+      </div>
+      <blockquote class="quote fade">Fem minutter tilbage.<br><em>Find</em> det du gemte væk.</blockquote>
+      <div class="quote-attr fade">Sidste del: <strong>Slutpump</strong> ↓</div>
+    </div>
+  </section>
+
+  <!-- DEL 4 — SLUTPUMP -->
+  <section class="del amrap" id="n-del4">
+    <div class="ctr">
+      <div class="del-head fade">
+        <div>
+          <div class="del-num">Del 4 · Slutpump</div>
+          <h2 class="del-title">Tøm <em>tanken.</em></h2>
+          <div class="del-meta">
+            <span>🔥 AMRAP 5</span>
+            <span>· Så mange runder som muligt</span>
+          </div>
+        </div>
+        <div class="del-time">5 min</div>
+      </div>
+      <div class="format-bar fade"><strong>AMRAP 5:</strong> 5 minutter på uret. Kør sekvensen om og om igen. Tæl runder.</div>
+      <div class="amrap-ladder fade">
+        <div class="amrap-step"><div class="amrap-reps">5</div><div class="amrap-name">Burpees</div></div>
+        <div class="amrap-step"><div class="amrap-reps">10</div><div class="amrap-name">Pushups</div></div>
+        <div class="amrap-step"><div class="amrap-reps">15</div><div class="amrap-name">Sit-ups</div></div>
+        <div class="amrap-step"><div class="amrap-reps">20</div><div class="amrap-name">Mountain<br>climbers</div></div>
+        <div class="amrap-step"><div class="amrap-reps">25</div><div class="amrap-name">Air squats</div></div>
+      </div>
+      <div class="del-foot fade">75 reps pr. runde · skriv dit antal ned bagefter.</div>
+    </div>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="outro">
+    <div class="outro-mark fade">✓</div>
+    <h2 class="fade">Færdig.<br>Du holdt <em>standarden.</em></h2>
+    <p class="fade">Skriv dit antal AMRAP-runder ned. Næste gang slår du den.</p>
+    <div class="outro-actions fade">
+      <button class="btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Tilbage til toppen ↑</button>
+      <button class="btn ghost" onclick="window.print()">🖨 Print</button>
+    </div>
+  </section>
+
+</div><!-- /navy -->
+
+
+<!-- ═══════════════════════════════════════ DIVIDER ═══════════════════════════════════════ -->
+<section class="divider" id="divider">
+  <div class="divider-line"></div>
+  <div class="divider-kicker">Eller</div>
+  <h3>Den <em style="font-style:italic">disciplinerede</em> vej.</h3>
+  <p>Samme opstilling. Samme fire dele. 30 % lettere belastning. Uden løb.<br>For kroppen der vil møde op — uden at brænde sig selv ned.</p>
+</section>
+
+
+<!-- ═══════════════════════════════════════ SENIOR ═══════════════════════════════════════ -->
+<div class="variant" id="senior">
+
+  <section class="variant-hero">
+    <div class="ctr">
+      <div class="v-tag senior fade">Version · Senior</div>
+      <h2 class="vh-title fade">Klogt. <em>Konsekvent.</em></h2>
+      <p class="vh-sub fade">Samme arkitektur. 30 % lettere belastning. Lavere vægt, færre reps. Trappen er stadig med — i dit tempo.</p>
+      <div class="vh-warn fade"><strong style="color:var(--warm)">Udstyr:</strong> 8 kg kettlebell · 2× 5 kg håndvægte · elastik · en stol/bænk · plads til at stå.</div>
+      <div class="vh-meta fade">
+        <div><div class="stat-num" style="color:var(--warm)">38</div><div class="stat-lbl">Min total</div></div>
+        <div><div class="stat-num" style="color:var(--warm)">4</div><div class="stat-lbl">Dele</div></div>
+        <div><div class="stat-num" style="color:var(--warm)">~25</div><div class="stat-lbl">Øvelser</div></div>
+        <div><div class="stat-num" style="color:var(--warm)">Solid</div><div class="stat-lbl">Intensitet</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEL 1 — OPVARMNING (senior) -->
+  <section class="del warm" id="s-del1">
+    <div class="ctr">
+      <div class="del-head fade">
+        <div>
+          <div class="del-num">Del 1 · Opvarmning</div>
+          <h2 class="del-title">Tænd <em>motoren.</em></h2>
+          <div class="del-meta">
+            <span>🔁 2 runder</span>
+            <span>⏱ 30 sek pr. øvelse</span>
+            <span>· Ingen pauser</span>
+          </div>
+        </div>
+        <div class="del-time">8 min</div>
+      </div>
+      <div class="format-bar fade"><strong>Format:</strong> 8 øvelser × 30 sek × 2 runder. Roligt tempo. Du må gerne tage en lille pause mellem øvelser hvis nødvendigt.</div>
+      <div class="ex-grid fade">
+        <div class="ex-tile"><div class="ex-num">1</div><div><div class="ex-name">Mini-squats</div><div class="ex-sub">Eller chair-squats</div></div></div>
+        <div class="ex-tile"><div class="ex-num">2</div><div><div class="ex-name">Band pull-aparts</div></div></div>
+        <div class="ex-tile"><div class="ex-num">3</div><div><div class="ex-name">Slow mountain climbers</div><div class="ex-sub">Eller tabletop-tap</div></div></div>
+        <div class="ex-tile"><div class="ex-num">4</div><div><div class="ex-name">Step-back lunges</div><div class="ex-sub">Kortere range</div></div></div>
+        <div class="ex-tile"><div class="ex-num">5</div><div><div class="ex-name">Knee-pushups</div><div class="ex-sub">Eller wall-pushups</div></div></div>
+        <div class="ex-tile"><div class="ex-num">6</div><div><div class="ex-name">Hofte-drive · ingen vægt</div><div class="ex-sub">Romanian deadlift, kropsvægt</div></div></div>
+        <div class="ex-tile"><div class="ex-num">7</div><div><div class="ex-name">Arm circles · skuldermobilitet</div></div></div>
+        <div class="ex-tile"><div class="ex-num">8</div><div><div class="ex-name">March på stedet · høje knæ</div><div class="ex-sub">Roligt tempo, ingen løb</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREATHER 1 (senior) -->
+  <section class="breather">
+    <div>
+      <div class="breath-art fade">
+        <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 Q40,15 80,40 T160,40 T240,40" stroke="rgba(124,168,158,.55)" stroke-width="1.5" fill="none"/>
+          <path d="M0,52 Q40,27 80,52 T160,52 T240,52" stroke="rgba(124,168,158,.3)" stroke-width="1" fill="none"/>
+          <path d="M0,28 Q40,3 80,28 T160,28 T240,28" stroke="rgba(124,168,158,.3)" stroke-width="1" fill="none"/>
+        </svg>
+      </div>
+      <blockquote class="quote fade">Roligt og rigtigt.<br>Det er ikke kompromis — det er <em>klogt.</em></blockquote>
+      <div class="quote-attr fade">Næste del: <strong>Knusemaskinen · let</strong> ↓</div>
+    </div>
+  </section>
+
+  <!-- DEL 2 — KNUSEMASKINEN (senior) -->
+  <section class="del crush" id="s-del2">
+    <div class="ctr">
+      <div class="del-head fade">
+        <div>
+          <div class="del-num">Del 2 · Knusemaskinen</div>
+          <h2 class="del-title">Hovedretten.</h2>
+          <div class="del-meta">
+            <span>🔁 3 runder</span>
+            <span>⏸ 60 sek pause mellem runder</span>
+          </div>
+        </div>
+        <div class="del-time">15 min</div>
+      </div>
+      <div class="format-bar fade"><strong>Format:</strong> March/step-ups → 6 indendørs øvelser → pause. Gentag × 3. Lyt til kroppen — drop reps om nødvendigt.</div>
+      <div class="ex-list fade">
+        <div class="ex-row feature">
+          <div class="ex-num">1</div>
+          <div class="ex-content">
+            <div class="ex-name">1 min march på stedet · høje knæ</div>
+            <div class="ex-sub">Eller 20 step-ups på lav skammel/trappe</div>
+          </div>
+        </div>
+        <div class="ex-row"><div class="ex-num">2</div><div class="ex-content"><div class="ex-name">12 kettlebell swings</div><div class="ex-sub">8 kg</div></div></div>
+        <div class="ex-row"><div class="ex-num">3</div><div class="ex-content"><div class="ex-name">8 knee-pushups</div><div class="ex-sub">Eller wall-pushups</div></div></div>
+        <div class="ex-row"><div class="ex-num">4</div><div class="ex-content"><div class="ex-name">8 goblet squats</div><div class="ex-sub">8 kg · eller chair-stands</div></div></div>
+        <div class="ex-row"><div class="ex-num">5</div><div class="ex-content"><div class="ex-name">8 band-rows</div><div class="ex-sub">Eller bord-rows · ingen pullups</div></div></div>
+        <div class="ex-row"><div class="ex-num">6</div><div class="ex-content"><div class="ex-name">14 walking lunges</div><div class="ex-sub">Kropsvægt</div></div></div>
+        <div class="ex-row"><div class="ex-num">7</div><div class="ex-content"><div class="ex-name">20 sek planke</div><div class="ex-sub">Eller knæ-planke</div></div></div>
+      </div>
+      <div class="del-foot fade">→ 60 sek pause. Vand. Næste runde.</div>
+    </div>
+  </section>
+
+  <!-- BREATHER 2 (senior) -->
+  <section class="breather">
+    <div>
+      <div class="breath-art fade">
+        <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="0,85 50,60 90,68 130,40 170,52 210,32 240,42" stroke="rgba(124,168,158,.55)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="210" cy="32" r="3.5" fill="rgba(124,168,158,.85)"/>
+        </svg>
+      </div>
+      <blockquote class="quote fade">Kroppen lytter.<br>Vær venlig. <em>Vær konsekvent.</em></blockquote>
+      <div class="quote-attr fade">Næste del: <strong>Trappeleg</strong> ↓</div>
+    </div>
+  </section>
+
+  <!-- DEL 3 — TRAPPELEG (senior) -->
+  <section class="del stairs" id="s-del3">
+    <div class="ctr">
+      <div class="del-head fade">
+        <div>
+          <div class="del-num">Del 3 · Trappeleg</div>
+          <h2 class="del-title">EMOM <em>10.</em></h2>
+          <div class="del-meta">
+            <span>⚡ Every Minute On the Minute</span>
+            <span>· 10 minutter, 10 opgaver</span>
+          </div>
+        </div>
+        <div class="del-time">10 min</div>
+      </div>
+      <div class="format-bar fade"><strong>EMOM 10:</strong> Hver hele minut starter du forfra. Resten af minuttet er pause. Skalér tempoet på trappen til dit niveau — gå roligt op om nødvendigt.</div>
+      <div class="emom-list fade">
+        <div class="emom-row sprint"><div class="emom-min">Min 1</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 2</div><div class="emom-name">7 KB thrusters · 2× 5 kg</div></div>
+        <div class="emom-row sprint"><div class="emom-min">Min 3</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 4</div><div class="emom-name">8 kneeling renegade rows · 2× 5 kg</div></div>
+        <div class="emom-row sprint"><div class="emom-min">Min 5</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 6</div><div class="emom-name">10 KB deadlifts · 8 kg</div></div>
+        <div class="emom-row sprint"><div class="emom-min">Min 7</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 8</div><div class="emom-name">Max knee-pushups · 30 sek</div></div>
+        <div class="emom-row sprint"><div class="emom-min">Min 9</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+        <div class="emom-row work"><div class="emom-min">Min 10</div><div class="emom-name">Max chair-squats · 30 sek</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREATHER 3 (senior) -->
+  <section class="breather">
+    <div>
+      <div class="breath-art fade">
+        <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="78" r="22" stroke="rgba(124,168,158,.55)" stroke-width="1.5" fill="none"/>
+          <line x1="100" y1="20" x2="100" y2="44" stroke="rgba(124,168,158,.55)" stroke-width="1.5"/>
+          <line x1="50" y1="78" x2="68" y2="78" stroke="rgba(124,168,158,.4)" stroke-width="1.5"/>
+          <line x1="132" y1="78" x2="150" y2="78" stroke="rgba(124,168,158,.4)" stroke-width="1.5"/>
+          <line x1="64" y1="42" x2="76" y2="54" stroke="rgba(124,168,158,.4)" stroke-width="1.5"/>
+          <line x1="124" y1="54" x2="136" y2="42" stroke="rgba(124,168,158,.4)" stroke-width="1.5"/>
+          <circle cx="100" cy="78" r="3" fill="rgba(124,168,158,.85)"/>
+        </svg>
+      </div>
+      <blockquote class="quote fade">Sidste del.<br>Du behøver ikke ekstrem. <em>Bare møde op.</em></blockquote>
+      <div class="quote-attr fade">Sidste del: <strong>Slutpump</strong> ↓</div>
+    </div>
+  </section>
+
+  <!-- DEL 4 — SLUTPUMP (senior) -->
+  <section class="del amrap" id="s-del4">
+    <div class="ctr">
+      <div class="del-head fade">
+        <div>
+          <div class="del-num">Del 4 · Slutpump</div>
+          <h2 class="del-title">Tøm <em>tanken.</em></h2>
+          <div class="del-meta">
+            <span>🔥 AMRAP 5</span>
+            <span>· Så mange runder som muligt</span>
+          </div>
+        </div>
+        <div class="del-time">5 min</div>
+      </div>
+      <div class="format-bar fade"><strong>AMRAP 5:</strong> 5 minutter på uret. Kør sekvensen om og om igen. Tæl runder. Stop hvis kroppen siger stop.</div>
+      <div class="amrap-ladder fade">
+        <div class="amrap-step"><div class="amrap-reps">3</div><div class="amrap-name">Squat-stands<br>ingen jump</div></div>
+        <div class="amrap-step"><div class="amrap-reps">5</div><div class="amrap-name">Knee-pushups</div></div>
+        <div class="amrap-step"><div class="amrap-reps">10</div><div class="amrap-name">Sit-ups<br>el. crunches</div></div>
+        <div class="amrap-step"><div class="amrap-reps">15</div><div class="amrap-name">Slow mountain climbers</div></div>
+        <div class="amrap-step"><div class="amrap-reps">20</div><div class="amrap-name">Chair-squats</div></div>
+      </div>
+      <div class="del-foot fade">53 reps pr. runde · skriv dit antal ned bagefter.</div>
+    </div>
+  </section>
+
+  <!-- OUTRO (senior) -->
+  <section class="outro">
+    <div class="outro-mark fade">✓</div>
+    <h2 class="fade">Færdig.<br>Du <em>mødte</em> op.</h2>
+    <p class="fade">Det er den eneste standard der tæller. Skriv dit antal runder ned. Konsistens trumfer alt.</p>
+    <div class="outro-actions fade">
+      <button class="btn primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Tilbage til toppen ↑</button>
+      <button class="btn ghost" onclick="window.print()">🖨 Print</button>
+    </div>
+  </section>
+
+</div><!-- /senior -->
+
+</main>
+
+<footer>
+  <div class="brand">DAGENS<span>·</span>TRÆNING</div>
+  <p>Karakter · Disciplin · Klarhed</p>
+  <p class="credo">Træning for livet. Ikke for udseendet.</p>
+</footer>
+
+<script>
+// Tab switching
+const tabs=document.querySelectorAll('.tab');
+const variants=document.querySelectorAll('.variant');
+tabs.forEach(t=>{
+  t.addEventListener('click',()=>{
+    const v=t.dataset.v;
+    tabs.forEach(x=>x.classList.toggle('active',x.dataset.v===v));
+    variants.forEach(x=>x.classList.toggle('active',x.id===v));
+    document.getElementById('divider').style.display=v==='navy'?'block':'none';
+    // Scroll into view of variant hero (skip the page hero)
+    setTimeout(()=>{
+      const target=document.getElementById(v);
+      if(target){
+        const y=target.getBoundingClientRect().top+window.pageYOffset-60;
+        window.scrollTo({top:y,behavior:'smooth'});
+      }
+    },80);
+  });
+});
+
+// Hide divider when on senior tab
+function syncDivider(){
+  const d=document.getElementById('divider');
+  if(!d)return;
+  const senior=document.querySelector('.variant#senior');
+  if(senior&&senior.classList.contains('active'))d.style.display='none';
+  else d.style.display='block';
+}
+syncDivider();
+
+// Fade-in observer
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:.1,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
