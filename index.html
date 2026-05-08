@@ -155,6 +155,33 @@ em{font-style:italic;color:var(--ac);font-weight:500}
 .btn.ghost{background:transparent;color:var(--tm);border:1.5px solid var(--line2)}
 .btn.ghost:hover{color:var(--tx);border-color:var(--ac)}
 
+/* UPCOMING */
+.upcoming{padding:3.5rem 0;border-top:1px solid var(--line);background:var(--bg)}
+.upcoming-shell{background:var(--bg3);border:1px solid var(--line);border-radius:var(--rl);overflow:hidden;transition:border-color .25s}
+.upcoming-shell[open]{border-color:var(--warm)}
+.upcoming-shell summary{list-style:none;cursor:pointer;padding:1.4rem 1.6rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .2s}
+.upcoming-shell summary::-webkit-details-marker{display:none}
+.upcoming-shell summary:hover{background:var(--bg4)}
+.ub-left{display:flex;flex-direction:column;align-items:flex-start;gap:.2rem;min-width:0}
+.ub-kicker{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);font-weight:700}
+.ub-title{font-family:var(--fd);font-size:1.6rem;color:var(--tx);font-weight:600;line-height:1.1}
+.ub-right{display:flex;align-items:center;gap:1rem;flex-shrink:0}
+.ub-count{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--warm);font-weight:700;padding:.3rem .65rem;background:var(--warmb);border:1px solid rgba(124,168,158,.4);border-radius:var(--r);font-family:var(--fb);white-space:nowrap}
+.ub-arrow{font-family:var(--fd);font-size:1.6rem;color:var(--warm);font-weight:300;line-height:1;transition:transform .3s ease}
+.upcoming-shell[open] .ub-arrow{transform:rotate(180deg)}
+.upcoming-body{padding:0 1.6rem 1.6rem;border-top:1px solid var(--line)}
+.upcoming-intro{font-size:.92rem;color:var(--tm);margin:1.2rem 0 1rem;font-style:italic;font-family:var(--fd)}
+.upcoming-card .vc-day{color:var(--warm)}
+.upcoming-card[open]{border-color:var(--warm)}
+.upcoming-card[open] .vc-toggle{color:var(--warm)}
+.upcoming-card .vc-badge{color:var(--warm);background:var(--warmb);border-color:rgba(124,168,158,.4)}
+@media(max-width:520px){
+  .upcoming-shell summary{padding:1.1rem 1.2rem}
+  .ub-title{font-size:1.25rem}
+  .ub-count{font-size:.62rem;padding:.25rem .5rem}
+  .upcoming-body{padding:0 1.1rem 1.2rem}
+}
+
 /* VAULT */
 .vault{padding:5rem 0 4rem;border-top:1px solid var(--line);background:var(--bg2);position:relative}
 .vault-head{text-align:center;margin-bottom:2.5rem}
@@ -264,7 +291,8 @@ footer .credo{font-family:var(--fd);font-style:italic;color:var(--tm);font-size:
   <div class="hdr-inner">
     <div class="brand">DAGENS<span>·</span>TRÆNING</div>
     <nav class="hdr-nav">
-      <a href="#today" class="active">I dag</a>
+      <a href="#today" class="active">Næste</a>
+      <a href="#upcoming">Kommende</a>
       <a href="#vault">Arkiv</a>
     </nav>
   </div>
@@ -290,7 +318,7 @@ footer .credo{font-family:var(--fd);font-style:italic;color:var(--tm);font-size:
 <section class="variant-hero">
   <div class="ctr">
     <div class="v-tag power fade">Version · FriisPower</div>
-    <div class="vh-date fade"><strong>8. maj 2026</strong> · I dag · Fredag</div>
+    <div class="vh-date fade"><strong>11. maj 2026</strong> · Mandag · Næste session</div>
     <h2 class="vh-title fade">Kraft. Karakter.<br><em>Klarhed.</em></h2>
     <p class="vh-sub fade">Samme intensitet som i går — frisk variation. Ingen swings. Mere træk, mere eksplosion, mere hollow. For kroppen der vil bygge sin egen standard.</p>
     <div class="vh-warn fade"><strong style="color:var(--ac)">⚠ Udstyr:</strong> 16 kg kettlebell · 2× 10 kg håndvægte · elastik · pullup-bar · trappe (&gt;15 trin).</div>
@@ -469,12 +497,251 @@ footer .credo{font-family:var(--fd);font-style:italic;color:var(--tm);font-size:
   <h2 class="fade">Færdig.<br>Du holdt <em>standarden.</em></h2>
   <p class="fade">Skriv dit antal AMRAP-runder ned. Næste gang slår du den.</p>
   <div class="outro-actions fade">
-    <a class="btn primary" href="#vault">Se arkiv ↓</a>
-    <button class="btn ghost" onclick="window.scrollTo({top:0,behavior:'smooth'})">Tilbage til toppen ↑</button>
+    <a class="btn primary" href="#upcoming">Næste sessioner ↓</a>
+    <a class="btn ghost" href="#vault">Se arkiv ↓</a>
   </div>
 </section>
 
 </main>
+
+<section class="upcoming" id="upcoming">
+  <div class="ctr">
+    <details class="upcoming-shell fade">
+      <summary>
+        <div class="ub-left">
+          <div class="ub-kicker">Træningsplan</div>
+          <div class="ub-title">Kommende træninger</div>
+        </div>
+        <div class="ub-right">
+          <div class="ub-count">2 planlagt</div>
+          <div class="ub-arrow">⌄</div>
+        </div>
+      </summary>
+      <div class="upcoming-body">
+        <p class="upcoming-intro">Næste to sessioner. Klik på en for at se programmet.</p>
+        <div class="vault-list">
+
+          <details class="vault-card upcoming-card">
+            <summary>
+              <div class="vc-date-block">
+                <div class="vc-day">13</div>
+                <div class="vc-month">Maj 2026</div>
+              </div>
+              <div class="vc-info">
+                <div class="vc-name">JERNHÅND <span class="vc-badge">Planlagt</span></div>
+                <div class="vc-meta">
+                  <span>⏱ 38 min</span>
+                  <span>· 4 dele</span>
+                  <span>· Heavy / grind</span>
+                  <span>· Onsdag</span>
+                </div>
+              </div>
+              <div class="vc-toggle">⌄</div>
+            </summary>
+            <div class="vc-body">
+
+              <div class="del compact warm">
+                <div class="del-head">
+                  <div>
+                    <div class="del-num">Del 1 · Opvarmning</div>
+                    <h3 class="del-title">Vågn op tungt.</h3>
+                    <div class="del-meta"><span>2 runder · 30 sek/øvelse · ingen pauser</span></div>
+                  </div>
+                  <div class="del-time">8 min</div>
+                </div>
+                <div class="format-bar"><strong>Format:</strong> 8 øvelser × 30 sek × 2 runder.</div>
+                <div class="ex-grid">
+                  <div class="ex-tile"><div class="ex-num">1</div><div class="ex-name">Air squats</div></div>
+                  <div class="ex-tile"><div class="ex-num">2</div><div class="ex-name">Inchworms</div></div>
+                  <div class="ex-tile"><div class="ex-num">3</div><div class="ex-name">Glute bridges</div></div>
+                  <div class="ex-tile"><div class="ex-num">4</div><div class="ex-name">Band pull-aparts</div></div>
+                  <div class="ex-tile"><div class="ex-num">5</div><div class="ex-name">Bear crawls</div></div>
+                  <div class="ex-tile"><div class="ex-num">6</div><div class="ex-name">Cossack squats</div></div>
+                  <div class="ex-tile"><div class="ex-num">7</div><div class="ex-name">Skuldermobilitet</div></div>
+                  <div class="ex-tile"><div class="ex-num">8</div><div class="ex-name">Trappeløb roligt</div></div>
+                </div>
+              </div>
+
+              <div class="del compact crush">
+                <div class="del-head">
+                  <div>
+                    <div class="del-num">Del 2 · Smedjen</div>
+                    <h3 class="del-title">Hovedretten.</h3>
+                    <div class="del-meta"><span>3 runder · 45 sek pause</span></div>
+                  </div>
+                  <div class="del-time">15 min</div>
+                </div>
+                <div class="format-bar"><strong>Format:</strong> 400m → 6 øvelser → pause. × 3.</div>
+                <div class="ex-list">
+                  <div class="ex-row feature"><div class="ex-num">1</div><div class="ex-content"><div class="ex-name">400 m løb</div></div></div>
+                  <div class="ex-row"><div class="ex-num">2</div><div class="ex-content"><div class="ex-name">14 håndvægt deadlifts</div><div class="ex-sub">2× 10 kg · flad ryg</div></div></div>
+                  <div class="ex-row"><div class="ex-num">3</div><div class="ex-content"><div class="ex-name">12 push-ups</div><div class="ex-sub">3 sek excentrisk</div></div></div>
+                  <div class="ex-row"><div class="ex-num">4</div><div class="ex-content"><div class="ex-name">10 KB front squats</div><div class="ex-sub">16 kg</div></div></div>
+                  <div class="ex-row"><div class="ex-num">5</div><div class="ex-content"><div class="ex-name">8 chin-ups</div><div class="ex-sub">Skalér m. elastik</div></div></div>
+                  <div class="ex-row"><div class="ex-num">6</div><div class="ex-content"><div class="ex-name">20 farmer steps</div><div class="ex-sub">2× 10 kg · oprejst</div></div></div>
+                  <div class="ex-row"><div class="ex-num">7</div><div class="ex-content"><div class="ex-name">30 sek dead hang</div><div class="ex-sub">Fra pullup-bar</div></div></div>
+                </div>
+                <div class="del-foot">→ 45 sek pause. Næste runde.</div>
+              </div>
+
+              <div class="del compact stairs">
+                <div class="del-head">
+                  <div>
+                    <div class="del-num">Del 3 · Trappeleg</div>
+                    <h3 class="del-title">EMOM 10.</h3>
+                    <div class="del-meta"><span>Every Minute On the Minute</span></div>
+                  </div>
+                  <div class="del-time">10 min</div>
+                </div>
+                <div class="emom-list">
+                  <div class="emom-row sprint"><div class="emom-min">Min 1</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 2</div><div class="emom-name">8 håndvægt clean & press · 2× 10 kg</div></div>
+                  <div class="emom-row sprint"><div class="emom-min">Min 3</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 4</div><div class="emom-name">10 reverse lunges · 2× 10 kg</div></div>
+                  <div class="emom-row sprint"><div class="emom-min">Min 5</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 6</div><div class="emom-name">12 KB goblet squats · 16 kg</div></div>
+                  <div class="emom-row sprint"><div class="emom-min">Min 7</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 8</div><div class="emom-name">Max strict push-ups · 40 sek</div></div>
+                  <div class="emom-row sprint"><div class="emom-min">Min 9</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 10</div><div class="emom-name">Max plank shoulder taps · 40 sek</div></div>
+                </div>
+              </div>
+
+              <div class="del compact amrap">
+                <div class="del-head">
+                  <div>
+                    <div class="del-num">Del 4 · Slutpump</div>
+                    <h3 class="del-title">AMRAP 5.</h3>
+                    <div class="del-meta"><span>Så mange runder som muligt</span></div>
+                  </div>
+                  <div class="del-time">5 min</div>
+                </div>
+                <div class="amrap-ladder">
+                  <div class="amrap-step"><div class="amrap-reps">5</div><div class="amrap-name">Chin-ups</div></div>
+                  <div class="amrap-step"><div class="amrap-reps">10</div><div class="amrap-name">Push press</div></div>
+                  <div class="amrap-step"><div class="amrap-reps">15</div><div class="amrap-name">Walking lunges</div></div>
+                  <div class="amrap-step"><div class="amrap-reps">20</div><div class="amrap-name">Sit-ups</div></div>
+                  <div class="amrap-step"><div class="amrap-reps">25</div><div class="amrap-name">Air squats</div></div>
+                </div>
+                <div class="del-foot">75 reps pr. runde.</div>
+              </div>
+
+            </div>
+          </details>
+
+          <details class="vault-card upcoming-card">
+            <summary>
+              <div class="vc-date-block">
+                <div class="vc-day">15</div>
+                <div class="vc-month">Maj 2026</div>
+              </div>
+              <div class="vc-info">
+                <div class="vc-name">STORMEN <span class="vc-badge">Planlagt</span></div>
+                <div class="vc-meta">
+                  <span>⏱ 38 min</span>
+                  <span>· 4 dele</span>
+                  <span>· Speed / explosive</span>
+                  <span>· Fredag</span>
+                </div>
+              </div>
+              <div class="vc-toggle">⌄</div>
+            </summary>
+            <div class="vc-body">
+
+              <div class="del compact warm">
+                <div class="del-head">
+                  <div>
+                    <div class="del-num">Del 1 · Opvarmning</div>
+                    <h3 class="del-title">Vækk vinden.</h3>
+                    <div class="del-meta"><span>2 runder · 30 sek/øvelse · ingen pauser</span></div>
+                  </div>
+                  <div class="del-time">8 min</div>
+                </div>
+                <div class="format-bar"><strong>Format:</strong> 8 øvelser × 30 sek × 2 runder.</div>
+                <div class="ex-grid">
+                  <div class="ex-tile"><div class="ex-num">1</div><div class="ex-name">Jumping jacks</div></div>
+                  <div class="ex-tile"><div class="ex-num">2</div><div class="ex-name">Air squats</div></div>
+                  <div class="ex-tile"><div class="ex-num">3</div><div class="ex-name">High knees</div></div>
+                  <div class="ex-tile"><div class="ex-num">4</div><div class="ex-name">Band pull-aparts</div></div>
+                  <div class="ex-tile"><div class="ex-num">5</div><div class="ex-name">Lateral lunges</div></div>
+                  <div class="ex-tile"><div class="ex-num">6</div><div class="ex-name">Inchworm + jump</div></div>
+                  <div class="ex-tile"><div class="ex-num">7</div><div class="ex-name">Skuldermobilitet</div></div>
+                  <div class="ex-tile"><div class="ex-num">8</div><div class="ex-name">Trappeløb stigende</div></div>
+                </div>
+              </div>
+
+              <div class="del compact crush">
+                <div class="del-head">
+                  <div>
+                    <div class="del-num">Del 2 · Stormcenteret</div>
+                    <h3 class="del-title">Hovedretten.</h3>
+                    <div class="del-meta"><span>3 runder · 45 sek pause</span></div>
+                  </div>
+                  <div class="del-time">15 min</div>
+                </div>
+                <div class="format-bar"><strong>Format:</strong> 400m → 6 øvelser → pause. × 3.</div>
+                <div class="ex-list">
+                  <div class="ex-row feature"><div class="ex-num">1</div><div class="ex-content"><div class="ex-name">400 m løb · hurtigt</div></div></div>
+                  <div class="ex-row"><div class="ex-num">2</div><div class="ex-content"><div class="ex-name">16 box jumps</div><div class="ex-sub">Bænk eller kasse · blød landing</div></div></div>
+                  <div class="ex-row"><div class="ex-num">3</div><div class="ex-content"><div class="ex-name">12 burpees</div><div class="ex-sub">Med fuldt hop</div></div></div>
+                  <div class="ex-row"><div class="ex-num">4</div><div class="ex-content"><div class="ex-name">10 broad jumps</div><div class="ex-sub">Lange spring fremad</div></div></div>
+                  <div class="ex-row"><div class="ex-num">5</div><div class="ex-content"><div class="ex-name">8 pull-ups</div><div class="ex-sub">Eksplosivt op</div></div></div>
+                  <div class="ex-row"><div class="ex-num">6</div><div class="ex-content"><div class="ex-name">20 jumping lunges</div><div class="ex-sub">Skift i luften</div></div></div>
+                  <div class="ex-row"><div class="ex-num">7</div><div class="ex-content"><div class="ex-name">30 sek hollow rocks</div><div class="ex-sub">Mavefokus</div></div></div>
+                </div>
+                <div class="del-foot">→ 45 sek pause. Næste runde.</div>
+              </div>
+
+              <div class="del compact stairs">
+                <div class="del-head">
+                  <div>
+                    <div class="del-num">Del 3 · Trappeleg</div>
+                    <h3 class="del-title">EMOM 10.</h3>
+                    <div class="del-meta"><span>Every Minute On the Minute</span></div>
+                  </div>
+                  <div class="del-time">10 min</div>
+                </div>
+                <div class="emom-list">
+                  <div class="emom-row sprint"><div class="emom-min">Min 1</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 2</div><div class="emom-name">12 jump squats</div></div>
+                  <div class="emom-row sprint"><div class="emom-min">Min 3</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 4</div><div class="emom-name">10 burpee-to-target</div></div>
+                  <div class="emom-row sprint"><div class="emom-min">Min 5</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 6</div><div class="emom-name">14 fast mountain climbers</div></div>
+                  <div class="emom-row sprint"><div class="emom-min">Min 7</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 8</div><div class="emom-name">Max double-unders / fast skipping · 40 sek</div></div>
+                  <div class="emom-row sprint"><div class="emom-min">Min 9</div><div class="emom-name">⚡ Sprint trappen op · gå ned</div></div>
+                  <div class="emom-row work"><div class="emom-min">Min 10</div><div class="emom-name">Max box jumps · 40 sek</div></div>
+                </div>
+              </div>
+
+              <div class="del compact amrap">
+                <div class="del-head">
+                  <div>
+                    <div class="del-num">Del 4 · Slutpump</div>
+                    <h3 class="del-title">AMRAP 5.</h3>
+                    <div class="del-meta"><span>Så mange runder som muligt</span></div>
+                  </div>
+                  <div class="del-time">5 min</div>
+                </div>
+                <div class="amrap-ladder">
+                  <div class="amrap-step"><div class="amrap-reps">5</div><div class="amrap-name">Burpees<br>med hop</div></div>
+                  <div class="amrap-step"><div class="amrap-reps">10</div><div class="amrap-name">Jump squats</div></div>
+                  <div class="amrap-step"><div class="amrap-reps">15</div><div class="amrap-name">Push-ups</div></div>
+                  <div class="amrap-step"><div class="amrap-reps">20</div><div class="amrap-name">Jumping jacks</div></div>
+                  <div class="amrap-step"><div class="amrap-reps">25</div><div class="amrap-name">Mountain climbers</div></div>
+                </div>
+                <div class="del-foot">75 reps pr. runde.</div>
+              </div>
+
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
 
 <section class="vault" id="vault">
   <div class="ctr">
@@ -489,7 +756,7 @@ footer .credo{font-family:var(--fd);font-style:italic;color:var(--tm);font-size:
       <details class="vault-card fade">
         <summary>
           <div class="vc-date-block">
-            <div class="vc-day">7</div>
+            <div class="vc-day">8</div>
             <div class="vc-month">Maj 2026</div>
           </div>
           <div class="vc-info">
@@ -720,10 +987,11 @@ document.querySelectorAll('.vault-card').forEach(card=>{
 });
 
 const headerLinks=document.querySelectorAll('.hdr-nav a');
-const sections={today:document.getElementById('today'),vault:document.getElementById('vault')};
+const sections={today:document.getElementById('today'),upcoming:document.getElementById('upcoming'),vault:document.getElementById('vault')};
 function updateNav(){
   const y=window.scrollY+120;
   let active='today';
+  if(sections.upcoming&&y>=sections.upcoming.offsetTop)active='upcoming';
   if(sections.vault&&y>=sections.vault.offsetTop)active='vault';
   headerLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+active));
 }
